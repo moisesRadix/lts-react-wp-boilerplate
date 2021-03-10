@@ -14,7 +14,7 @@ export default function AdminLayout() {
 			<Navbar />
 			<Sidebar />
 			<MainContentStyled>
-				<h1>Hello World</h1>
+				<h1>Welcome To Radix Haven!</h1>
 			</MainContentStyled>
 		</React.Fragment>
 	);

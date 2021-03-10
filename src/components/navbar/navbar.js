@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { LogoRadix } from '../sidebar/sidebar';
 
 const NavbarStyled = styled.nav`
 	list-style-type: none;
@@ -23,14 +24,17 @@ const NavbarStyled = styled.nav`
 	.active {
 		background-color: #4caf50;
 	}
+	.nav-settings {
+		float: right;
+	}
 `;
 
 export default function Navbar() {
 	return (
 		<NavbarStyled>
 			<li>
-				<a class='active' href='#home'>
-					Home
+				<a className='active' href='#home'>
+					<LogoRadix />
 				</a>
 			</li>
 			<li>
@@ -41,6 +45,10 @@ export default function Navbar() {
 			</li>
 			<li>
 				<a href='#about'>About</a>
+			</li>
+			<li className='nav-settings'>
+				{' '}
+				<a href='#Settings'>Settings</a>
 			</li>
 		</NavbarStyled>
 	);

@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../assets/img/svg/logoRadix.svg';
+import logo from '../../assets/img/svg/RadixSymbol.svg';
+import { MainViewList } from '../../routes';
+import LinkTooltip from '../tooltip/linktooltip';
 
 const SidebarStyled = styled.div`
 	z-index: 4;
 	margin: 0;
 	padding: 0;
-	width: 77px;
+	width: 66px;
 	background-color: #f1f1f1;
 	position: fixed;
 	height: 100%;
@@ -24,7 +26,7 @@ const SidebarStyled = styled.div`
 	}
 `;
 
-const LogoRadix = styled.div`
+export const LogoRadix = styled.div`
 	display: inline-flex;
 	align-items: center;
 	content: url(${logo});
@@ -37,9 +39,13 @@ const LogoRadix = styled.div`
 	background: white !important;
 `;
 export default function Sidebar() {
-	return (
-		<SidebarStyled>
-			<LogoRadix />
-		</SidebarStyled>
-	);
+	const linkParser = () =>
+		MainViewList.map((v, i) => {
+			return (
+				<a href='#' key={i}>
+					<LinkTooltip toolTipText={v.name}>Icon</LinkTooltip>
+				</a>
+			);
+		});
+	return <SidebarStyled>{linkParser()}</SidebarStyled>;
 }
