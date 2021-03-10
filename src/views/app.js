@@ -1,11 +1,11 @@
 import React from 'react';
-import Sidebar from '../components/sidebar/sidebar';
+import AdminLayout from '../layouts/admin';
+import './style.css';
 
 export default function app() {
 	return (
 		<div>
-			<Sidebar />
-			<h1>Hello World</h1>
+			<AdminLayout />
 		</div>
 	);
 }

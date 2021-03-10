@@ -6,6 +6,20 @@ const { HotModuleReplacementPlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const resolve = (dir) => path.join(__dirname, './', dir);
 
+const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
+	filename: 'css/[name].[hash].css',
+	chunkFilename: 'css/[id].[hash].css',
+	ignoreOrder: true,
+});
+
+const CreateHtmlWebpackPluginConfig = ({ filename }) =>
+	new HtmlWebpackPlugin({
+		template: resolve('public/index.html'),
+		favicon: resolve('public/RadixSymbol.ico'),
+		inject: 'body',
+		filename,
+	});
+
 module.exports = {
 	entry: resolve('src/index.js'),
 	devServer: {
@@ -28,7 +42,7 @@ module.exports = {
 					loader: 'babel-loader',
 				},
 				resolve: {
-					extensions: ['.js', '.jsx'],
+					extensions: ['.js', '.jsx', '.css', '.less', '.json'],
 				},
 			},
 			//Allows use of CSS
@@ -46,6 +60,11 @@ module.exports = {
 				test: /\.(png|jpg|svg)$/i,
 				loader: 'file-loader',
 			},
+			// about fonts
+			{
+				test: /\.(woff|woff2|ttf|eot)$/,
+				use: 'file?name=fonts/[name].[ext]!static',
+			},
 		],
 	},
 	plugins: [
@@ -54,13 +73,9 @@ module.exports = {
 		//Allows update react components in real time
 		new HotModuleReplacementPlugin(),
 		//Allows to create an index.html in our build folder
-		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, 'public/index.html'), //we put the file that we created in public folder
-		}),
+		CreateHtmlWebpackPluginConfig({ filename: 'index.html' }),
 		//This get all our css and put in a unique file
-		new MiniCssExtractPlugin({
-			filename: 'styles.[contentHash].css',
-		}),
+		MiniCssExtractPluginConfig,
 	],
 	resolve: {
 		extensions: ['*', '.js', '.jsx'],
