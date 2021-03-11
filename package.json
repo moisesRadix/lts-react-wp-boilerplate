@@ -48,6 +48,11 @@
 		"webpack-dev-server": "^3.11.2"
 	},
 	"dependencies": {
+		"@styled-icons/bootstrap": "^10.29.0",
+		"@styled-icons/fa-regular": "^10.26.0",
+		"@styled-icons/ionicons-outline": "^10.28.0",
+		"@styled-icons/ionicons-sharp": "^10.28.0",
+		"@styled-icons/ionicons-solid": "^10.28.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"styled-components": "^5.2.1"

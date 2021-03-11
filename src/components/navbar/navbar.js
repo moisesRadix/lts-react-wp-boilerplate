@@ -7,18 +7,16 @@ const NavbarStyled = styled.nav`
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #333;
+	background-color: transparent;
 	li {
 		float: left;
 		a {
 			display: block;
-			color: white;
+			color: #2c2c2c;
 			text-align: center;
 			padding: 14px 16px;
+			font-weight: 600;
 			text-decoration: none;
-		}
-		a:hover:not(.active) {
-			background-color: #111;
 		}
 	}
 	.active {

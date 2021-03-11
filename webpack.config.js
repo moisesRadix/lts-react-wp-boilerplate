@@ -62,8 +62,15 @@ module.exports = {
 			},
 			// about fonts
 			{
-				test: /\.(woff|woff2|ttf|eot)$/,
-				use: 'file?name=fonts/[name].[ext]!static',
+				test: /\.(ttf|eot|woff|woff2|svg)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: 'fonts/',
+						esModule: false,
+					},
+				},
 			},
 		],
 	},

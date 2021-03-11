@@ -7,7 +7,7 @@ import LinkTooltip from '../tooltip/linktooltip';
 const SidebarStyled = styled.nav`
 	/* z-index: 4; */
 	display: inline-block;
-	min-height: 100vh;
+	min-height: 90vh;
 	width: 66px;
 	float: left;
 	background-color: #f1f1f1;
@@ -25,7 +25,7 @@ const SidebarStyled = styled.nav`
 	}
 	ul {
 		text-align: center;
-		color: white;
+		color: black;
 		list-style: none;
 		padding-left: 0px !important;
 		margin-right: 1px;
@@ -36,15 +36,14 @@ const SidebarStyled = styled.nav`
 			cursor: pointer;
 			color: black;
 			text-decoration: none;
-			transition: all ease-out 120ms;
+			transition: all ease-out 100ms;
 
 			i {
 				display: block;
 				font-style: normal;
 				color: black;
 				font-size: 18px;
-				color: white;
-				transition: all ease 450ms;
+				transition: all ease 150ms;
 				&:hover {
 					color: #f7f7f7;
 				}
@@ -114,35 +113,15 @@ export default function Sidebar() {
 	const linkParser = () =>
 		MainViewList.map((v, i) => {
 			return (
-				<a href='#' key={i}>
-					<LinkTooltip toolTipText={v.name}>Icon</LinkTooltip>
-				</a>
+				<li key={i}>
+					<i>{v.icon}</i>
+					<span className='tooltip'>{v.name}</span>
+				</li>
 			);
 		});
 	return (
 		<SidebarStyled>
-			<ul>
-				<li className='active'>
-					<i className='fa fa-share-alt'>icon</i>
-					<span className='tooltip'>Connections</span>
-				</li>
-				<li>
-					<i className='fa fa-hdd-o'>icon</i>
-					<span className='tooltip'>Devices</span>
-				</li>
-				<li>
-					<i className='fa fa-newspaper-o'>icon</i>
-					<span className='tooltip'>Contacts</span>
-				</li>
-				<li>
-					<i className='fa fa-print'>icon</i>
-					<span className='tooltip'>Fax</span>
-				</li>
-				<li>
-					<i className='fa fa-sliders'>icon</i>
-					<span className='tooltip'>Settings</span>
-				</li>
-			</ul>
+			<ul>{linkParser()}</ul>
 		</SidebarStyled>
 	);
 }

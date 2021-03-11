@@ -1,3 +1,8 @@
+import React from 'react';
+
+import { UserCircle } from '@styled-icons/fa-regular';
+import { Home } from '@styled-icons/ionicons-outline';
+
 export const MainViewList = [
 	{
 		name: 'Home',
@@ -6,7 +11,7 @@ export const MainViewList = [
 		layout: '/admin',
 		isHome: true,
 		// component: Integrations,
-		// mainIcon: <TiHomeOutline size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: <Home />,
 		inMenu: true,
 		show: true,
 	},
@@ -16,7 +21,7 @@ export const MainViewList = [
 		path: '/radixhaven-customers',
 		layout: '/admin',
 		// component: ClientsMainView,
-		// mainIcon: <TiGroupOutline size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: <UserCircle />,
 		inMenu: true,
 		show: true,
 	},
@@ -26,7 +31,7 @@ export const MainViewList = [
 		path: '/radixhaven-products',
 		layout: '/admin',
 		// component: ProductsMainView,
-		// mainIcon: <AiOutlineBarcode size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: 'xf288',
 
 		inMenu: true,
 		show: true,
@@ -37,7 +42,7 @@ export const MainViewList = [
 		path: '/radixhaven-subscription',
 		layout: '/admin',
 		// component: SubscriptionsView,
-		// mainIcon: <IoMdPricetag size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: 'xf0f2',
 		inMenu: true,
 		show: true,
 	},
@@ -47,7 +52,7 @@ export const MainViewList = [
 		path: '/radixhaven-revenue',
 		layout: '/admin',
 		// component: SalesMainView,
-		// mainIcon: <FiShoppingBag size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: 'xf0d6',
 		inMenu: true,
 		show: true,
 	},
@@ -57,7 +62,7 @@ export const MainViewList = [
 		path: '/radixhaven-chart-creator',
 		layout: '/admin',
 		// component: ChartCreatorView,
-		// mainIcon: <VscGraph size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: '',
 		inMenu: false,
 		show: false,
 	},
@@ -67,7 +72,7 @@ export const MainViewList = [
 		path: '/radixhaven-machine-learning',
 		layout: '/admin',
 		// component: MlMainView,
-		// mainIcon: <AiOutlineRobot size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: '',
 		inMenu: true,
 		show: true,
 	},
@@ -77,7 +82,7 @@ export const MainViewList = [
 		path: '/radixhaven-goals',
 		layout: '/admin',
 		// component: GoalsView,
-		// mainIcon: <GiStairsGoal size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: '',
 		inMenu: true,
 		show: true,
 	},
@@ -88,7 +93,7 @@ export const MainViewList = [
 		path: '/radixhaven-forecast',
 		layout: '/admin',
 		// component: BusinessIntelligenseView,
-		// mainIcon: <RiComputerLine size='30' style={{ verticalAlign: 'bottom' }} />,
+		icon: '',
 		inMenu: true,
 		show: true,
 	},
