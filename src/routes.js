@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { UserCircle } from '@styled-icons/fa-regular';
-import { Home } from '@styled-icons/ionicons-outline';
+import { MoneyBillAlt, UserCircle } from '@styled-icons/fa-regular';
+import { Bag, Home, List } from '@styled-icons/ionicons-outline';
 
 export const MainViewList = [
 	{
@@ -11,7 +11,7 @@ export const MainViewList = [
 		layout: '/admin',
 		isHome: true,
 		// component: Integrations,
-		icon: <Home />,
+		icon: <Home size={20} />,
 		inMenu: true,
 		show: true,
 	},
@@ -21,7 +21,7 @@ export const MainViewList = [
 		path: '/radixhaven-customers',
 		layout: '/admin',
 		// component: ClientsMainView,
-		icon: <UserCircle />,
+		icon: <UserCircle size={20} />,
 		inMenu: true,
 		show: true,
 	},
@@ -31,7 +31,7 @@ export const MainViewList = [
 		path: '/radixhaven-products',
 		layout: '/admin',
 		// component: ProductsMainView,
-		icon: 'xf288',
+		icon: <Bag size={20} />,
 
 		inMenu: true,
 		show: true,
@@ -42,7 +42,7 @@ export const MainViewList = [
 		path: '/radixhaven-subscription',
 		layout: '/admin',
 		// component: SubscriptionsView,
-		icon: 'xf0f2',
+		icon: <List size={20} />,
 		inMenu: true,
 		show: true,
 	},
@@ -52,7 +52,7 @@ export const MainViewList = [
 		path: '/radixhaven-revenue',
 		layout: '/admin',
 		// component: SalesMainView,
-		icon: 'xf0d6',
+		icon: <MoneyBillAlt size={20} />,
 		inMenu: true,
 		show: true,
 	},

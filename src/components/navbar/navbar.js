@@ -20,7 +20,7 @@ const NavbarStyled = styled.nav`
 		}
 	}
 	.active {
-		background-color: #4caf50;
+		background-color: #f1f1f1;
 	}
 	.nav-settings {
 		float: right;

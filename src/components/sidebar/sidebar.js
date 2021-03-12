@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/img/svg/RadixSymbol.svg';
 import { MainViewList } from '../../routes';
-import LinkTooltip from '../tooltip/linktooltip';
 
 const SidebarStyled = styled.nav`
 	/* z-index: 4; */
@@ -19,10 +18,10 @@ const SidebarStyled = styled.nav`
 		padding: 16px;
 		text-decoration: none;
 	}
-	a:hover:not(.active) {
+	/* a:hover:not(.active) {
 		background-color: #555;
 		color: white;
-	}
+	} */
 	ul {
 		text-align: center;
 		color: black;
@@ -45,7 +44,7 @@ const SidebarStyled = styled.nav`
 				font-size: 18px;
 				transition: all ease 150ms;
 				&:hover {
-					color: #f7f7f7;
+					/* color: #f7f7f7; */
 				}
 			}
 
@@ -77,8 +76,8 @@ const SidebarStyled = styled.nav`
 			}
 
 			&:hover {
-				background-color: black;
-				color: #f7f7f7;
+				/* background-color: black; */
+				/* color: #f7f7f7; */
 
 				.tooltip {
 					visibility: visible;
