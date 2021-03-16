@@ -12,6 +12,8 @@ import { createBrowserHistory } from "history";
 import "./style.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./auth/login/login";
+import { ApolloProvider } from "@apollo/client";
+import client from "../utils/graphql/graphClient";
 dotenv.config();
 export const hist = createBrowserHistory();
 export const GlobalContext = createContext();

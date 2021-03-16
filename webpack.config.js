@@ -1,15 +1,24 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const TerserJSPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { HotModuleReplacementPlugin } = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const resolve = (dir) => path.join(__dirname, "./", dir);
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
+// const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
-const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
-  filename: "css/[name].[hash].css",
-  chunkFilename: "css/[id].[hash].css",
-  ignoreOrder: true,
+const resolve = (dir) => path.join(__dirname, "./", dir);
+const env = process.env.NODE_ENV || "development";
+const isDev = env === "development";
+
+const WebpackDefinePluginConfig = new webpack.DefinePlugin({
+  "process.env": {
+    NODE_ENV: JSON.stringify(env),
+  },
 });
 
 const CreateHtmlWebpackPluginConfig = ({ filename }) =>
@@ -20,76 +29,145 @@ const CreateHtmlWebpackPluginConfig = ({ filename }) =>
     filename,
   });
 
+const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
+  filename: "css/[name].[hash].css",
+  chunkFilename: "css/[id].[hash].css",
+  ignoreOrder: true,
+});
+
+const CleanWebpackPluginConfig = new CleanWebpackPlugin({
+  verbose: true,
+  cleanStaleWebpackAssets: false,
+});
+
 module.exports = {
-  entry: resolve("src/index.js"),
+  entry: ["@babel/polyfill", resolve("src/index.js")],
+  optimization: {
+    runtimeChunk: "single",
+    removeEmptyChunks: true,
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          reuseExistingChunk: true,
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+      },
+    },
+    minimizer: [
+      new TerserJSPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
+          output: {
+            comments: false,
+          },
+          sourceMap: false,
+        },
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
+  output: {
+    filename: "[name].[hash].bundle.js",
+    path: resolve("build"),
+    publicPath: "/",
+    crossOriginLoading: "use-credentials",
+  },
+  resolve: {
+    modules: [resolve("src"), "node_modules"],
+    extensions: [".js", ".jsx", ".json"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx|.json)$/,
+        loader: "babel-loader",
+        include: [resolve("src")],
+        exclude: resolve("node_modules"),
+      },
+      {
+        test: /\.css$/,
+        use: [
+          isDev ? "css-hot-loader" : "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          isDev ? "css-hot-loader" : "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.jpg|png|gif|woff(2)?|eot|ttf|svg|mp4|webm$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            limit: 5000,
+            outputPath: "assets",
+          },
+        },
+      },
+    ],
+  },
+  node: { fs: "empty" },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   devServer: {
     contentBase: resolve("build"),
     historyApiFallback: {
       disableDotRule: true,
     },
     inline: true,
-    port: 5000,
+    port: 3000,
     open: true,
   },
-  mode: "development",
-  target: "node",
-  module: {
-    rules: [
-      //Allows use javascript
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/, //don't test node_modules folder
-        use: {
-          loader: "babel-loader",
-        },
-        resolve: {
-          extensions: [".js", ".jsx", ".css", ".less", ".json"],
-        },
-      },
-      //Allows use of CSS
-      {
-        test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          "css-loader",
-        ],
-      },
-      //Allows use of images
-      {
-        test: /\.(png|jpg|svg)$/i,
-        loader: "file-loader",
-      },
-      // about fonts
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "fonts/",
-            esModule: false,
-          },
-        },
-      },
-    ],
-  },
   plugins: [
-    //Allows remove/clean the build folder
-    new CleanWebpackPlugin(),
-    //Allows update react components in real time
-    new HotModuleReplacementPlugin(),
-    //Allows to create an index.html in our build folder
+    // new MomentLocalesPlugin(),
     CreateHtmlWebpackPluginConfig({ filename: "index.html" }),
-    //This get all our css and put in a unique file
+    WebpackDefinePluginConfig,
     MiniCssExtractPluginConfig,
+    CleanWebpackPluginConfig,
+    new Dotenv({
+      allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+    }),
+    // new PreloadWebpackPlugin({
+    //   rel(entry) {
+    //     if (/\.css$/.test(entry)) return "prefetch";
+    //     if (/\.woff$/.test(entry)) return "preload";
+    //     if (/\.woff2$/.test(entry)) return "preload";
+    //     if (/\.svg$/.test(entry)) return "prefetch";
+    //     return "prefetch";
+    //   },
+    //   as(entry) {
+    //     if (/\.css$/.test(entry)) return "style";
+    //     if (/\.woff$/.test(entry)) return "font";
+    //     if (/\.woff2$/.test(entry)) return "font";
+    //     // if (/\.svg$/.test(entry)) return "image";
+    //     return "script";
+    //   },
+    // }),
+    // // new BundleAnalyzerPlugin({
+    // //   analyzerMode: "static",
+    // // }),
+    // // new CompressionPlugin({
+    //   // algorithm: "gzip",
+    //   test: /\.(js|jsx|json|css|html|svg)$/,
+    //   threshold: 10240,
+    //   compressionOptions: { level: 1 },
+    //   filename: "[path][base].gz",
+    //   minRatio: 0.8,
+    // }),
   ],
-  resolve: {
-    extensions: ["*", ".js", ".jsx"],
-  },
-  output: {
-    path: resolve("build"),
-    filename: "bundle.js",
-  },
 };
