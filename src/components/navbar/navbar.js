@@ -14,7 +14,7 @@ const NavbarStyled = styled.nav`
 			display: block;
 			color: #2c2c2c;
 			text-align: center;
-			padding: 14px 16px;
+			padding: 18px 16px;
 			font-weight: 600;
 			text-decoration: none;
 		}

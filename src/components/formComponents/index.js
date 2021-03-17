@@ -5,6 +5,10 @@ export const FormGroup = styled.div`
 	display: block;
 	width: 300px;
 	margin: 15px auto;
+	margin-bottom: 0.5em;
+	.has-danger {
+		margin-top: -5px !important;
+	}
 `;
 
 export const Label = styled.label`
@@ -20,7 +24,6 @@ export const Input = styled.input`
 	background: white;
 	border-radius: 3px;
 	width: 95%;
-	margin-bottom: 0.5em;
 	outline: none !important;
 	&:focus {
 		outline: none !important;

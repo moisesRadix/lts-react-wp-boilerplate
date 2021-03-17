@@ -1,0 +1,133 @@
+import React from 'react';
+import moment from 'moment';
+import ParserLabel from '../components/textParser/ParserLabel';
+
+export const all_products_rec = [
+	{
+		Header: 'Billing Date',
+		accessor: 'date',
+	},
+	{
+		Header: 'Subscription ID',
+		accessor: 'subscription_id',
+	},
+
+	{
+		Header: 'Customer Name',
+		accessor: 'customer_name',
+	},
+	{
+		Header: 'Customer email',
+		accessor: 'email',
+	},
+	{
+		Header: 'Amount',
+		accessor: 'amount',
+	},
+	{
+		Header: 'Discount',
+		accessor: 'discount',
+	},
+	{
+		Header: 'Fee',
+		accessor: 'fee',
+	},
+	{
+		Header: 'Status',
+		accessor: 'status',
+	},
+];
+
+export const data_all_products = [
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+	{
+		date: moment().format('MM-DD-YYYY'),
+		subscription_id: <b className='text-muted'>sub_I7iBTnpolX1Jnz</b>,
+		product_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		payment_id: <b className='text-muted'>prod_I7iBTnpolX1Jnz</b>,
+		product_name: 'Ivan Clock',
+		customer_name: 'Nadir Soza',
+		email: 'nsoza@radixhaven.com',
+		amount: <ParserLabel value={589.69} type='currencyPositive' sufix='usd' />,
+		discount: <ParserLabel value={35} type='currencyPositive' sufix='usd' />,
+		fee: <ParserLabel value={350} type='currencyPositive' sufix='usd' />,
+		status: <b className='text-success'>Active</b>,
+	},
+];

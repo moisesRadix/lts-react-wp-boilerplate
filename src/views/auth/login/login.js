@@ -71,6 +71,9 @@ export default function Login(props) {
 				<LoginImage src='https://radixhaven.com/wp-content/uploads/2020/08/logoRadix.png' />
 				<h2>Login</h2>
 				<div style={{ margin: '1rem' }}>
+					<div className='has-danger' style={{ fontWeight: 'bold' }}>
+						{error?.payload}
+					</div>
 					<form onSubmit={handleSubmit} noValidate>
 						<FormGroup>
 							<label>Email</label>
@@ -88,7 +91,7 @@ export default function Login(props) {
 								</small>
 							)}
 						</FormGroup>
-						<FormGroup style={{ marginBottom: 5 }}>
+						<FormGroup>
 							<label>Password</label>
 							<Input
 								placeholder='Password'
@@ -106,7 +109,7 @@ export default function Login(props) {
 								</small>
 							)}
 						</FormGroup>
-						<div style={{ textAlign: 'center' }}>
+						<div style={{ textAlign: 'center', marginTop: 10 }}>
 							<SubmitLoginButton type='submit'>
 								{loading ? <BeatLoader size={10} color='#F1EAE0' loading /> : 'Login'}
 							</SubmitLoginButton>
