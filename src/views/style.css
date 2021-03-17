@@ -40,3 +40,7 @@ body {
   font-display: swap;
   font-style: normal;
 }
+
+.has-danger {
+  color: rgb(247, 77, 47);
+}
