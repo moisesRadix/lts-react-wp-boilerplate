@@ -41,6 +41,39 @@ body {
   font-style: normal;
 }
 
-.has-danger {
-  color: rgb(247, 77, 47);
+.has-danger,
+text-danger {
+  color: rgb(247, 77, 47) !important;
+}
+.text-success {
+  color: rgb(21, 179, 68) !important;
+}
+.text-warning {
+  color: rgb(202, 121, 15) !important;
+}
+.text-radix {
+  color: #11b4d9 !important;
+}
+.text-muted {
+  color: #747373 !important;
+}
+
+/* Animation For login */
+@keyframes hue-rotate {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.card-menu {
+  border-radius: 5px;
+  padding: 0.8rem;
+  box-shadow: 0 0px 12px 2px rgb(0 0 0 / 15%);
+  background-color: #fff;
+  background-clip: initial;
+  color: #252422;
+  margin-bottom: 10px;
+  position: relative;
 }
