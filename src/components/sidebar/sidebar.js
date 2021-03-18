@@ -6,10 +6,12 @@ import { MainViewList } from '../../routes';
 const SidebarStyled = styled.nav`
 	/* z-index: 4; */
 	display: inline-block;
-	min-height: 90vh;
+	height: 100vh;
+	z-index: 10000;
 	width: 66px;
 	float: left;
-	background-color: #f1f1f1;
+	box-shadow: -2px 11px 10px 0px #00000061;
+	background-color: #fff;
 	overflow: hidden;
 	transition-duration: 0.2s, 0.2s, 0.35s;
 	a {
@@ -120,6 +122,9 @@ export default function Sidebar() {
 		});
 	return (
 		<SidebarStyled>
+			<li style={{ margin: '1em 17px' }}>
+				<LogoRadix />
+			</li>
 			<ul>{linkParser()}</ul>
 		</SidebarStyled>
 	);
