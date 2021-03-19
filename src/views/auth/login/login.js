@@ -60,7 +60,7 @@ const LoginContainer = styled.div`
     .container-lg {
       display: grid;
       width: 70%;
-      height: 56vh;
+      height: 75vh;
       grid-template-columns: 50% 34%;
       .form {
         margin: 7rem 3rem;
