@@ -15,6 +15,9 @@
   ],
   "author": "Moises Reyes",
   "license": "ISC",
+  "engines": {
+    "node": "12.x"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
