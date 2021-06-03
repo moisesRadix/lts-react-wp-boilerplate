@@ -1,3 +1,50 @@
+:root {
+  --radix-color: #1e45f7;
+  --radix-gradient: linear-gradient(#0075ff, #2fb7f1);
+  --radix-gradient-color-start: #0075ff;
+  --radix-gradient-color-end: #2fb7f1;
+  --radix-border-radius: 5px;
+  --radix-form-background: #e7f0f9;
+  --radix-standard-separator: 10px;
+  --radix-low-padding: 5px;
+  --radix-low-margin: 5px;
+  --radix-min-with-box: 240px;
+}
+
+.radixGradientBackground {
+  background: var(--radix-gradient);
+}
+
+.radixWhite {
+  color: white;
+}
+
+.form-control {
+  background-color: var(--radix-form-background);
+}
+
+.form-control,
+.form-control:focus,
+.form-control:active {
+  background-color: var(--radix-form-background) !important;
+  border: none !important;
+}
+
+.radixTextGradientBackground {
+  background: -webkit-linear-gradient(
+    var(--radix-gradient-color-start),
+    var(--radix-gradient-color-end)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loader-beat {
+  animation: beat 1s infinite alternate;
+  transform-origin: center;
+}
+
 body {
   color: #2c2c2c;
   font-size: 14px;
@@ -76,4 +123,110 @@ text-danger {
   color: #252422;
   margin-bottom: 10px;
   position: relative;
+}
+.succeeded {
+  color: #39b570;
+}
+
+.active-status {
+  color: #39b570;
+}
+
+.past_due-status,
+.past-due-status {
+  color: #f7a35c;
+}
+
+.unpaid-status {
+  color: #434348;
+}
+
+.incomplete {
+  color: #434348;
+}
+
+.uncaptured {
+  color: #7cb5ec;
+}
+
+.incomplete_expired-status {
+  color: orange;
+}
+
+.disputed {
+  color: violet;
+}
+
+.refunded {
+  color: #8085e9;
+}
+
+.pending {
+  color: rgb(231, 64, 13);
+}
+
+.refunded-pending {
+  color: #e4d354;
+}
+
+.partialy-refunded {
+  color: #c57b57;
+}
+
+.failed {
+  color: #f45b5b;
+}
+
+.canceled-status,
+.cancelled-status {
+  color: #f45b5b;
+}
+
+.canceled,
+.ended-status {
+  color: #91e9e1;
+}
+
+.early-fraud {
+  color: rgb(18, 73, 124);
+}
+
+.reversed {
+  color: #ea9e8d;
+}
+
+.collection-uncollected {
+  color: rgb(199, 133, 12);
+}
+
+.everything {
+  color: #daefb3;
+}
+
+.collection-due-date {
+  color: rgb(88, 134, 207);
+}
+
+.collection-collected {
+  color: #6bd098;
+}
+
+.collection-cancelled {
+  color: rgb(173, 66, 4);
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(223, 218, 218, 0.239);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(153, 151, 151);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #686565;
 }

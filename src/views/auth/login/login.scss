@@ -1,0 +1,58 @@
+.login-form {
+	background-color: white;
+	border-radius: var(--radix-border-radius);
+	padding: 2rem 1rem 1.5rem 1rem;
+	max-width: 400px;
+	z-index: 100000;
+}
+
+.forgot-password-img {
+	width: 35%;
+	margin-left: -10rem;
+}
+
+.extra-actions {
+	overflow: hidden;
+	text-align: center;
+}
+.extra-actions:before,
+.extra-actions:after {
+	background-color: #0003;
+	content: '';
+	display: inline-block;
+	height: 1px;
+	position: relative;
+	vertical-align: middle;
+	width: 42%;
+}
+.extra-actions:before {
+	right: 0.5em;
+	margin-left: -50%;
+}
+.extra-actions:after {
+	left: 0.5em;
+	margin-right: -50%;
+}
+.login-page .card-login .input-group:last-child {
+	margin-bottom: 0px !important;
+}
+.text-info {
+	color: var(--color-radix) !important;
+}
+.login-input,
+.login-input:focus,
+.login-input:active {
+	border-radius: var(--radix-border-radius);
+	border: none !important;
+	background-color: #e7f0f9 !important;
+}
+.login-input-icon .input-group-append .input-group-text,
+.input-group-prepend .input-group-text {
+	background-color: #e7f0f9 !important;
+	border: 1px solid transparent !important;
+	border-radius: var(--radix-border-radius) 0px 0px var(--radix-border-radius) !important;
+	i {
+		color: #1e45f7 !important;
+	}
+}
+

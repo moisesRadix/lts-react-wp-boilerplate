@@ -70,9 +70,9 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "express-sslify": "^1.2.0",
-    "helmet": "^3.21.3",
     "express-static-gzip": "^2.1.0",
     "graphql": "^15.5.0",
+    "helmet": "^3.21.3",
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",
     "history": "^5.0.0",
@@ -91,6 +91,7 @@
     "react-select": "^4.2.1",
     "react-spinners": "^0.10.6",
     "react-table": "^7.6.3",
+    "react-toastify": "^7.0.4",
     "styled-components": "^5.2.1"
   }
 }

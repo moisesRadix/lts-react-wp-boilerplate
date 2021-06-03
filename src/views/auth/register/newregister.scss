@@ -1,0 +1,144 @@
+.main-register-container {
+	margin: 10px 100px 10px 10px;
+	position: relative;
+}
+
+.register-form .card {
+	box-shadow: none;
+}
+
+#id_org_size {
+	width: calc(100% - 43px);
+}
+
+.promo1{
+	font-size: 1.3rem;
+	font-weight: 600;
+	&-inner{
+		color: var(--radix-gradient-color-start);
+	}
+}
+
+.promo2{
+	font-size: .9rem;
+	font-weight: 600;
+}
+
+#id_org_size div[class*='control'] {
+	border-radius: 0px 10px 10px 0px !important;
+	border: none !important;
+	background-color: #e7f0f9 !important;
+	box-shadow: none !important;
+	&:focus,
+	&:active {
+		border-radius: 10px;
+		border: none !important;
+		border-color: transparent !important;
+		background-color: #e7f0f9 !important;
+		box-shadow: none !important;
+	}
+}
+
+.modal-terms {
+	background-color: #fff;
+	border-radius: 2px !important;
+}
+
+.rocket-image {
+	margin-top: 5rem;
+	z-index: 1;
+}
+
+.register-input,
+.register-input:focus,
+.register-input:active {
+	border-radius: var(--radix-border-radius);
+	border: none !important;
+	background-color: #e7f0f9 !important;
+	box-shadow: none !important;
+}
+.register-input-icon .input-group-append .input-group-text,
+.input-group-prepend .input-group-text {
+	background-color: #e7f0f9 !important;
+	border: 1px solid transparent !important;
+	border-radius: var(--radix-border-radius) 0px 0px var(--radix-border-radius) !important;
+	box-shadow: none !important;
+	i {
+		color: var(--radix-gradient-color-start) !important;
+	}
+}
+
+.container-test {
+	padding: 40px;
+}
+
+.Isotipo{
+	height: 50%;
+	width: 17%;
+}
+
+.Logotipo{
+	height: 55%;
+	width: 60%;
+}
+
+.brand-register {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+@media (max-width: 575px) {
+	.registerInput{
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+}
+
+@media (max-width: 960px) {
+	.main-rg-container{
+		padding: 0 !important;
+		
+	}
+	.brand-register{
+		flex-direction: column !important;
+	}
+	.brand-logos{
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	.main-register-container {
+		display: flex;
+		margin: 10px !important;
+	}
+	.Isotipo{
+		height: 40%;
+		width: 13%;
+	}
+	
+	.Logotipo{
+		height: 35%;
+		width: 40%;
+	}
+
+	.brand-login{
+		margin-top: 10px;
+		text-align: center !important;
+	}
+}
+
+@media (min-width: 1920px) {
+	.main-register-container{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 70vh;
+		justify-content: center;
+		width: 90%;
+	}
+	.form-side{
+		width: 100%;
+	}
+}

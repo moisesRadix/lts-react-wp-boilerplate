@@ -1,0 +1,125 @@
+.main-auth {
+  align-items: center;
+  background: var(--radix-gradient);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+.rocketContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  &-rocket {
+    position: absolute;
+    bottom: 0;
+    right: 250px;
+  }
+}
+.text-info,
+a.text-info:hover,
+a.text-info:focus,
+.text-info:active {
+  background: -webkit-linear-gradient(#0075ff, #2fb7f1) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.btn-info,
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+  background: linear-gradient(#0075ff, #2fb7f1) !important;
+}
+
+.main-auth-register {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+  .circle {
+    background: var(--radix-gradient);
+    clip-path: circle(70% at 0 50%);
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.lb-form {
+  color: #7c7575 !important;
+  font-weight: 600;
+}
+
+.login-form {
+  box-shadow: none !important;
+  width: 90%;
+}
+
+.text-url {
+  background: -webkit-linear-gradient(#0075ff, #2fb7f1) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.main-rg-container {
+  height: 90vh;
+  max-width: 90%;
+  display: grid;
+  place-items: center;
+  padding-right: 35px;
+  position: relative;
+}
+
+.svg-radix-logo {
+  width: 55%;
+  margin-bottom: 3rem;
+}
+
+.label-error {
+  font-size: small;
+  color: rgb(255, 81, 0);
+  font-weight: 600;
+}
+
+.credits {
+  bottom: 124px;
+  color: #fff;
+  left: 38px;
+  position: absolute;
+}
+
+.mrk-image {
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+@media (max-width: 1100px) {
+  .rocketContainer {
+    display: none;
+  }
+  .bg-register-circle {
+    circle {
+      display: none;
+    }
+  }
+  .main-auth-register {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .circleContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1499px) {
+  .circle {
+    clip-path: circle(77% at 0 50%) !important;
+  }
+}
